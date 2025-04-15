@@ -835,9 +835,91 @@ def main():
     
     return True
 
+def simple_main(from_email, csv_file_path, subject, html_body, image_paths=None, test_mode=True):
+    """
+    Simplified function to send emails with all parameters provided directly.
+    
+    Args:
+        from_email (str): Sender email address
+        csv_file_path (str): Path to CSV file with recipient data
+        subject (str): Email subject line
+        html_body (str): Email content in HTML format
+        image_paths (list): List of paths to images to attach
+        test_mode (bool): If True, emails won't actually be sent
+    
+    Returns:
+        bool: True if process completed successfully
+    """
+    print(f"\nRunning email sender with predefined parameters {'(TEST MODE)' if test_mode else ''}")
+    
+    # Initialize SendGrid
+    sg_client = initialize_sendgrid()
+    if not sg_client:
+        return False
+    
+    # Detect CSV columns
+    email_column = detect_csv_columns(csv_file_path)
+    if not email_column:
+        return False
+    
+    # Get recipient data
+    recipients = get_recipients_from_csv(csv_file_path, email_column)
+    if not recipients:
+        print("No valid recipients found in your contact list.")
+        return False
+    
+    # Prepare images
+    attachments = []
+    images_info = []
+    
+    if image_paths:
+        for i, image_path in enumerate(image_paths, 1):
+            image_cid = f"image_{i}"
+            images_info.append({
+                'path': image_path,
+                'content_id': image_cid
+            })
+            
+            print(f"Processing image: {image_path}")
+            attachment = create_attachment(image_path, image_cid)
+            if attachment:
+                attachments.append(attachment)
+                print(f"✓ Image processed with ID: {image_cid}")
+                print(f"  To reference this image in your email: <img src=\"cid:{image_cid}\" alt=\"Image {i}\">")
+    
+    # Enhance HTML content
+    html_content = enhance_html_content(html_body)
+    
+    # Send emails
+    success_count, failed_emails = send_emails(
+        sg_client=sg_client,
+        from_email=from_email,
+        recipients=recipients,
+        subject=subject,
+        html_content=html_content,
+        attachments=attachments,
+        test_mode=test_mode
+    )
+    
+    return True
+
 if __name__ == "__main__":
     try:
-        main()
+        # Run the interactive version by default
+        # main()
+        
+        # Use the simple_main function with direct parameters
+        simple_main(
+            from_email="email@example.com",
+            csv_file_path="recipients.csv",
+            subject="Your Important Email",
+            html_body="<p>Hello {{FIRST_NAME}},</p><p>This is a test email with <b>HTML formatting</b>.</p><p>Check out this image: </p>",
+            image_paths=[
+            "https://images.unsplash.com/photo-1741462166411-b94730c55171?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8", 
+            "https://images.unsplash.com/photo-1741762764258-8f9348bdf186?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D"
+            ],
+            test_mode=False  # Set to False to actually send emails
+        )
     except KeyboardInterrupt:
         logger.info("User cancelled operation")
         print("\nOperation cancelled by user.")

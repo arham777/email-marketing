@@ -1,0 +1,31 @@
+2025-04-15 16:37:12,217 - INFO - Initializing SendGrid
+2025-04-15 16:37:27,911 - INFO - User cancelled operation
+2025-04-15 16:39:21,507 - INFO - Initializing SendGrid
+2025-04-15 16:39:21,515 - INFO - Selected email column: 'EMAIL'
+2025-04-15 16:39:21,563 - INFO - Processing image: 'https://images.unsplash.com/photo-1741462166411-b94730c55171?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8'
+2025-04-15 16:39:21,850 - INFO - Image processed successfully: image_1
+2025-04-15 16:39:21,858 - INFO - Processing image: 'https://images.unsplash.com/photo-1741762764258-8f9348bdf186?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D'
+2025-04-15 16:39:22,059 - INFO - Image processed successfully: image_2
+2025-04-15 16:39:22,059 - INFO - Starting email sending process (TEST MODE)
+2025-04-15 16:39:22,059 - INFO - TEST MODE - Would send to: arhamathar11@gmail.com
+2025-04-15 16:39:22,264 - INFO - TEST MODE - Would send to: arhamawan529@gmail.com
+2025-04-15 16:39:41,662 - INFO - Initializing SendGrid
+2025-04-15 16:39:41,670 - INFO - Selected email column: 'EMAIL'
+2025-04-15 16:39:41,678 - INFO - Processing image: 'https://images.unsplash.com/photo-1741462166411-b94730c55171?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8'
+2025-04-15 16:39:42,089 - INFO - Image processed successfully: image_1
+2025-04-15 16:39:42,089 - INFO - Processing image: 'https://images.unsplash.com/photo-1741762764258-8f9348bdf186?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D'
+2025-04-15 16:39:42,276 - INFO - Image processed successfully: image_2
+2025-04-15 16:39:42,276 - INFO - Starting email sending process 
+2025-04-15 16:39:44,014 - INFO - Email sent to arhamathar11@gmail.com
+2025-04-15 16:39:45,276 - INFO - Email sent to arhamawan529@gmail.com
+2025-04-15 16:41:38,347 - INFO - Initializing SendGrid
+2025-04-15 16:41:38,355 - INFO - Selected email column: 'EMAIL'
+2025-04-15 16:41:38,371 - INFO - Processing image: 'https://images.unsplash.com/photo-1741462166411-b94730c55171?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8'
+2025-04-15 16:41:38,636 - INFO - Image processed successfully: image_1
+2025-04-15 16:41:38,636 - INFO - Processing image: 'https://images.unsplash.com/photo-1741462166411-b94730c55171?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8'
+2025-04-15 16:41:38,861 - INFO - Image processed successfully: image_2
+2025-04-15 16:41:38,869 - INFO - Processing image: 'https://images.unsplash.com/photo-1741762764258-8f9348bdf186?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D'
+2025-04-15 16:41:39,047 - INFO - Image processed successfully: image_3
+2025-04-15 16:41:39,047 - INFO - Starting email sending process 
+2025-04-15 16:41:41,518 - INFO - Email sent to arhamathar11@gmail.com
+2025-04-15 16:41:43,450 - INFO - Email sent to arhamawan529@gmail.com
